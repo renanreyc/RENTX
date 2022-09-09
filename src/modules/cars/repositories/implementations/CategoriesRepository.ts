@@ -1,8 +1,7 @@
 import { getRepository, Repository } from "typeorm";
+
 import { Category } from "../../entities/Category";
 import { ICategoriesRepository, ICreateCategoryDTO } from "../ICategoriesRepository";
-
-
 
 class CategoriesRepository implements ICategoriesRepository {
     
@@ -28,7 +27,7 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     async findByName(name: string): Promise<Category> {
-        const category = await this.repository.findOne({ name });
+        const category = await this.repository.findOneBy({ name });
         return category;
     }
 }
