@@ -30,4 +30,4 @@ class UpdateUserAvatarUseCase {
     }
 }
 
-export { UpdateUserAvatarUseCase }
+export { UpdateUserAvatarUseCase };
