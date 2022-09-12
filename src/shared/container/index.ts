@@ -4,13 +4,13 @@ import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepositor
 import { UsersRepository } from "@modules/accounts/repositories/implementations/UsersRepository"
 
 import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRepository"
-import { CategoriesRepository } from "@modules/cars/repositories/implementations/CategoriesRepository"
+import { CategoriesRepository } from "@modules/cars/infra/repositories/CategoriesRepository"
 
 import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository"
-import { SpecificationsRepository } from "@modules/cars/repositories/implementations/SpecificationsRepository"
+import { SpecificationsRepository } from "@modules/cars/infra/repositories//SpecificationsRepository"
 
 import { ICarsRepository } from "@modules/cars/repositories/ICarRepository"
-import { CarsRepository } from "@modules/cars/repositories/implementations/CarsRepository"
+import { CarsRepository } from "@modules/cars/infra/repositories//CarsRepository"
 
 
 container.registerSingleton<ICategoriesRepository>(

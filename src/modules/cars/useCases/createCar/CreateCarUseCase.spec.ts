@@ -1,5 +1,5 @@
 import { AppError } from "@errors/AppError";
-import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
+import { CarsRepositoryInMemory } from "@modules/cars/repositories/In-memory/CarsRepositoryInMemory";
 
 import { CreateCarUseCase } from "./CreateCarUseCase"
 
