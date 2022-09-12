@@ -6,9 +6,9 @@
     "port": 5432,
     "host": "localhost", 
     "database": "rentx", 
-    "migrations": ["./src/database/migrations/*.ts"],
+    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
     "entities": ["./src/modules/**/entities/*.ts"],
     "cli": {
-      "migrationsDir": "./src/database/migrations"
+      "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
   }
