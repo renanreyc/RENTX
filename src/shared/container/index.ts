@@ -1,18 +1,22 @@
-import { container } from "tsyringe"
+import { container } from "tsyringe";
 
-import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository"
-import { UsersRepository } from "@modules/accounts/repositories/implementations/UsersRepository"
+import "@shared/container/providers";
 
-import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRepository"
-import { CategoriesRepository } from "@modules/cars/infra/repositories/CategoriesRepository"
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { UsersRepository } from "@modules/accounts/repositories/implementations/UsersRepository";
 
-import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository"
-import { SpecificationsRepository } from "@modules/cars/infra/repositories//SpecificationsRepository"
+import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRepository";
+import { CategoriesRepository } from "@modules/cars/infra/repositories/CategoriesRepository";
 
-import { ICarsRepository } from "@modules/cars/repositories/ICarRepository"
-import { CarsRepository } from "@modules/cars/infra/repositories//CarsRepository"
-import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository"
-import { CarsImageRepository } from "@modules/cars/infra/repositories/CarsImageRepository"
+import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
+import { SpecificationsRepository } from "@modules/cars/infra/repositories//SpecificationsRepository";
+
+import { ICarsRepository } from "@modules/cars/repositories/ICarRepository";
+import { CarsRepository } from "@modules/cars/infra/repositories//CarsRepository";
+import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
+import { CarsImageRepository } from "@modules/cars/infra/repositories/CarsImageRepository";
+import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
+import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
 
 
 container.registerSingleton<ICategoriesRepository>(
@@ -38,4 +42,9 @@ container.registerSingleton<ICarsRepository>(
 container.registerSingleton<ICarsImagesRepository>(
     "CarsImagesRepository",
     CarsImageRepository
+)
+
+container.registerSingleton<IRentalsRepository>(
+    "RentalsRepository",
+    RentalsRepository
 )
