@@ -3,11 +3,11 @@ import swaggerUi from "swagger-ui-express";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 
-import { router } from "./shared/infra/http/routes";
-import swaggerFile from './swagger.json';
+import { router } from "./routes";
+import swaggerFile from '../../../swagger.json';
 import { AppError } from "@errors/AppError";
 import "@shared/container";
-import createConnection from "./shared/infra/typeorm";
+import createConnection from "../typeorm";
 
 
 createConnection();
@@ -29,7 +29,9 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
     return response.status(500).json({
         status: "error",
         message: `Internal server error = ${err.message}`,
-    })
-})
+    });
+});
 
-app.listen(3333, () => console.log("Server is runnning!"));
+
+
+export { app };
