@@ -33,6 +33,7 @@ describe("List Categories Controller", () => {
             email: "admin@rentx.com.br",
             password: "admin"
         });
+        
         const { token } = responseToken.body
         
         await request(app)
@@ -51,6 +52,5 @@ describe("List Categories Controller", () => {
 
         expect(response.status).toBe(200);
         expect(response.body.length).toBe(1);    
-        expect(response.body[0]).toHaveProperty("id");
     });
 });

@@ -52,9 +52,11 @@ describe("Create Category Controller", () => {
             email: "admin@rentx.com.br",
             password: "admin"
         });
+
         const { token } = responseToken.body
         
-        const response = await request(app).post("/categories")
+        const response = await request(app)
+            .post("/categories")
             .send({
                     name: "Category Test",
                     description: "Description category Test 2 - same name"
