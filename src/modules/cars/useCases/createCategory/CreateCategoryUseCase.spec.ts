@@ -17,14 +17,14 @@ describe("Create Category", () => {
         const category = {
             name: "Category Test",
             description: "Category description Test",
-        }
+        };
         
         await createCategoryUseCase.execute({
             name: category.name,
             description: category.description,
         });
 
-        categoriesRepositoryInMemory.findByName(category.name);
+        await categoriesRepositoryInMemory.findByName(category.name);
 
         const categoryCreated = await categoriesRepositoryInMemory.findByName(
             category.name
