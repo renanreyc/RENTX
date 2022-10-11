@@ -10,6 +10,7 @@ export class  UsersTokensRepository implements IUsersTokensRepository {
     constructor(){
         this.repository = getRepository(UserTokens);
     }
+  
 
     async create({ 
         expires_date, 
@@ -28,5 +29,18 @@ export class  UsersTokensRepository implements IUsersTokensRepository {
         return userToken;        
     }
 
+      async findByUserIdAndRefreshToken(
+        user_id: string,
+        refresh_token: string
+      ): Promise<UserTokens> {
+        const usersTokens = await this.repository.findOne({
+          user_id,
+          refresh_token,
+        });
+        return usersTokens;
+      }
 
+      async deleteById(id: string): Promise<void> {
+        await this.repository.delete(id);
+      }
 }
